@@ -99,7 +99,7 @@
 Jordan Duabe -- `@j4ckofalltrades`
 
 - Software Engineer @ WiseTime
--  Polyglot dev & open-source enthusiast
+- Polyglot dev & open-source enthusiast
 - Command-line ninja 🥷
 - Has one too many MKBs ⌨
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
@@ -153,10 +153,10 @@ git clone https://github.com/git/git
 ```
 </div>
 
-<aside class="notes"><p>Total commits: <code>git rev-list --count --all</code>
-Total files: <code>git ls-files | wc -l</code>
-Total lines of code: <code>git ls-files | xargs wc -l</code>
-Total committers: <code>git shortlog --summary --numbered | wc -l</code></p>
+<aside class="notes"><p>Total commits: <code>git rev-list --count --all</code></p>
+<p>Total files: <code>git ls-files | wc -l</code></p>
+<p>Total lines of code: <code>git ls-files | xargs wc -l</code></p>
+<p>Total committers: <code>git shortlog --summary --numbered | wc -l</code></p>
 </aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -530,7 +530,7 @@ git remote add <remote> <remote-url>
 # to check if the remote was properly configured
 git remote --verbose
 
-# the update the remote URLs can also be updated
+# the remote URLs can also be updated
 # generally used when the remote repository is renamed
 # or when switching hosting providers e.g. GitHub
 git remote set-url <remote> <new-remote-url>
@@ -1152,20 +1152,16 @@ git grep <search-term> [pathspec]
 
 ### `git revert`
 
-Revert some existing commits.
+Undo some existing commits.
 
 ```sh
 git revert <commit>
 
-# Revert a specific commit
-git revert <commit-hash>
+# revert a specific commit
+git revert <commit>
 
-# Revert a commit relative to the latest commit
-# This reverts the 4th latest commit
-git revert HEAD~3
-
-# Open an editor and edit the default message
-git revert --edit <commit>
+# revert the commit but doesn't commit the changes
+git revert --no-commit <commit>
 ```
 </div>
 
@@ -1180,7 +1176,7 @@ Stash the changes in a dirty working directory away.
 ```sh
 git stash create <message>
 
-# Applying stashes
+# list all existing stashes
 git stash list
 # apply specific stash from list
 git stash apply stash{0}
@@ -1195,7 +1191,7 @@ git stash pop
 Apply the changes introduced by some existing commits (from some other branch).
 
 ```sh
-git cherry-pick <commit-hash>
+git cherry-pick <commit>
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
